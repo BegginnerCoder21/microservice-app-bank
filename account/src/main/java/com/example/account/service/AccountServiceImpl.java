@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @Service
 public class AccountServiceImpl implements AccountService {
@@ -42,5 +43,11 @@ public class AccountServiceImpl implements AccountService {
                         .address(request.getAddress())
                         .build())
                 .build();
+    }
+
+    @Override
+    public List<Account> allAccount() {
+
+        return this.accountRepository.findAll();
     }
 }
