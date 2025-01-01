@@ -9,6 +9,8 @@ import com.fundTransfert.fundTransfert.utils.FundTransfertUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class FundTransfertServiceImpl implements FundTransfertService{
 
@@ -37,5 +39,11 @@ public class FundTransfertServiceImpl implements FundTransfertService{
                         .ifsc(fundTransfert.getIfsc())
                         .build())
                 .build();
+    }
+
+    @Override
+    public List<FundTransfert> allTransaction() {
+
+        return this.fundTransfertRepository.findAll();
     }
 }
