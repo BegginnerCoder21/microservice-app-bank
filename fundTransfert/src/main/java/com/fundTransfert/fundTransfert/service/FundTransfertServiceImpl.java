@@ -46,4 +46,20 @@ public class FundTransfertServiceImpl implements FundTransfertService{
 
         return this.fundTransfertRepository.findAll();
     }
+
+    @Override
+    public List<FundTransfert> getAccountFrom(String accountNumber) {
+
+        boolean isFundTransferExist = this.fundTransfertRepository.existsByAccountFrom(accountNumber);
+
+/*
+        if(!isFundTransferExist)
+        {
+            return null;
+        }
+
+ */
+
+        return this.fundTransfertRepository.findByAccountFrom(accountNumber);
+    }
 }

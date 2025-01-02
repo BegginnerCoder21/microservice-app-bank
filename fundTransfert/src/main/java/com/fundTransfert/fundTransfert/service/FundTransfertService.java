@@ -10,4 +10,5 @@ public interface FundTransfertService {
 
     public BankResponse transaction(CreatingFundTransfertdto request);
     public List<FundTransfert> allTransaction();
+    public List<FundTransfert> getAccountFrom(String accountNumber);
 }

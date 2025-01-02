@@ -27,4 +27,10 @@ public class FundTransfertController {
     {
         return this.fundTransfertService.allTransaction();
     }
+
+    @GetMapping("/get-account-from/{accountNumber}")
+    public List<FundTransfert> getAccountFrom(@PathVariable String accountNumber)
+    {
+        return this.fundTransfertService.getAccountFrom(accountNumber);
+    }
 }
