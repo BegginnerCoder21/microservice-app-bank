@@ -27,4 +27,10 @@ public class AccountController {
     {
         return this.accountService.allAccount();
     }
+
+    @GetMapping("/get-account-number/{accountNumber}")
+    public BankResponse getAccountNumber(@PathVariable String accountNumber)
+    {
+        return this.accountService.getForAccount(accountNumber);
+    }
 }

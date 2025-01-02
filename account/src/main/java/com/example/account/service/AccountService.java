@@ -12,4 +12,5 @@ public interface AccountService {
 
     BankResponse createAccount(CreatingUserRequest request);
     List<Account> allAccount();
+    BankResponse getForAccount(String accountNumber);
 }

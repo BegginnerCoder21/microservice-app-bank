@@ -50,4 +50,33 @@ public class AccountServiceImpl implements AccountService {
 
         return this.accountRepository.findAll();
     }
+
+    @Override
+    public BankResponse getForAccount(String accountNumber) {
+
+        boolean isAccountExist = this.accountRepository.existsByAccountNumber(accountNumber);
+
+        if(!isAccountExist)
+        {
+            return BankResponse.builder()
+                    .responseCode(AccountUtils.ACCOUNT_NOT_FOUND_CODE)
+                    .responseMessage(AccountUtils.ACCOUNT_NOT_FOUND_MESSAGE)
+                    .accountInfo(null)
+                    .build();
+        }
+
+        Account accountFound = this.accountRepository.findByAccountNumber(accountNumber);
+
+        return BankResponse.builder()
+                .responseCode(AccountUtils.ACCOUNT_EXIST_CODE)
+                .responseMessage(AccountUtils.ACCOUNT_EXIST_MESSAGE)
+                .accountInfo(AccountInfo.builder()
+                        .accountNumber(accountFound.getAccountNumber())
+                        .accountName(accountFound.getAccountName())
+                        .accountType(accountFound.getAccountType())
+                        .address(accountFound.getAddress())
+                        .accountBalance(accountFound.getAccountBalance())
+                        .build())
+                .build();
+    }
 }

@@ -6,6 +6,10 @@ public class AccountUtils {
 
     public static final String REGISTERED_USER_SUCCESS_CODE = "001";
     public static final String REGISTERED_USER_SUCCESS_MESSAGE = "Votre compte a été crée avec succès";
+    public static final String ACCOUNT_NOT_FOUND_CODE = "002";
+    public static final String ACCOUNT_NOT_FOUND_MESSAGE = "Le compte n'a pas été trouvé !";
+    public static final String ACCOUNT_EXIST_CODE = "003";
+    public static final String ACCOUNT_EXIST_MESSAGE = "Le compte a bien été trouvé ! ";
 
     public static String generateAccountNumber() {
 
