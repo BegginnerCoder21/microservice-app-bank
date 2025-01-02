@@ -29,7 +29,7 @@ public class AccountController {
     }
 
     @GetMapping("/get-account-number/{accountNumber}")
-    public BankResponse getAccountNumber(@PathVariable String accountNumber)
+    public Account getAccountNumber(@PathVariable String accountNumber)
     {
         return this.accountService.getForAccount(accountNumber);
     }

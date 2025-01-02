@@ -52,14 +52,6 @@ public class FundTransfertServiceImpl implements FundTransfertService{
 
         boolean isFundTransferExist = this.fundTransfertRepository.existsByAccountFrom(accountNumber);
 
-/*
-        if(!isFundTransferExist)
-        {
-            return null;
-        }
-
- */
-
         return this.fundTransfertRepository.findByAccountFrom(accountNumber);
     }
 }

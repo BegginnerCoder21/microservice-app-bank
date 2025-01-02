@@ -52,10 +52,11 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
-    public BankResponse getForAccount(String accountNumber) {
+    public Account getForAccount(String accountNumber) {
 
         boolean isAccountExist = this.accountRepository.existsByAccountNumber(accountNumber);
 
+        /*
         if(!isAccountExist)
         {
             return BankResponse.builder()
@@ -65,18 +66,8 @@ public class AccountServiceImpl implements AccountService {
                     .build();
         }
 
-        Account accountFound = this.accountRepository.findByAccountNumber(accountNumber);
+         */
 
-        return BankResponse.builder()
-                .responseCode(AccountUtils.ACCOUNT_EXIST_CODE)
-                .responseMessage(AccountUtils.ACCOUNT_EXIST_MESSAGE)
-                .accountInfo(AccountInfo.builder()
-                        .accountNumber(accountFound.getAccountNumber())
-                        .accountName(accountFound.getAccountName())
-                        .accountType(accountFound.getAccountType())
-                        .address(accountFound.getAddress())
-                        .accountBalance(accountFound.getAccountBalance())
-                        .build())
-                .build();
+        return this.accountRepository.findByAccountNumber(accountNumber);
     }
 }

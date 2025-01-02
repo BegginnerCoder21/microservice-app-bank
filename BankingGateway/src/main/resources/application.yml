@@ -14,3 +14,7 @@ spring:
           uri: http://localhost:9091
           predicates:
             - Header=Service, Fund-Transfer
+        - id: report_account_route
+          uri: http://localhost:9092
+          predicates:
+            - Header=Service, Report-Account
