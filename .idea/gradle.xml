@@ -4,10 +4,26 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/BankRates" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/BankRates" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/BankingGateway" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/BankingGateway" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/ReportAccount" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/ReportAccount" />
           </set>
         </option>
       </GradleProjectSettings>
