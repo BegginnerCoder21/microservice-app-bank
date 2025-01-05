@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/BankRates.main.iml" filepath="$PROJECT_DIR$/.idea/modules/BankRates.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ReportAccount.main.iml" filepath="$PROJECT_DIR$/.idea/modules/ReportAccount.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/account.main.iml" filepath="$PROJECT_DIR$/.idea/modules/account.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/fundTransfert.main.iml" filepath="$PROJECT_DIR$/.idea/modules/fundTransfert.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/microservices.iml" filepath="$PROJECT_DIR$/.idea/microservices.iml" />

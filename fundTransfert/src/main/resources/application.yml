@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: fundTransfert
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/micro_fund_transfert
+    username: root
+    password:
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+server:
+    port: 9091
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: health
+  health:
+    circuitbreakers:
+      enabled: true
+resilience4j:
+  circuitbreaker:
+    instances:
+      rateService:
+        registerHealthIndicator: true
+        failureRateThreshold: 50
+        minimumNumberOfCalls: 5
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+        waitDurationInOpenState: 20s
+        permittedNumberOfCallsInHalfOpenState: 3
+        slidingWindowSize: 10
+        slidingWindowType: COUNT_BASED
+
+eureka:
+  client:
+    enabled: false
